@@ -1,6 +1,6 @@
 # compe-zsh
 
-Zsh completion for compe-zsh
+Zsh completion for compe
 
 ## Requirements
 
