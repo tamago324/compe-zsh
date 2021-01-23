@@ -1,6 +1,6 @@
 # compe-zsh
 
-Zsh completion for compe
+Zsh completion source for [nvim-compe](https://github.com/hrsh7th/nvim-compe)
 
 ## Requirements
 
