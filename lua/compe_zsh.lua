@@ -16,7 +16,7 @@ function Source.get_metadata(self)
   return {
     priority = 100,
     dup = 0,
-    menu = '[zsh]',
+    menu = '[Zsh]',
     filetypes = {'zsh'},
   }
 end
