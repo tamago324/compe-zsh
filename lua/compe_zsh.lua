@@ -39,13 +39,10 @@ function Source.complete(self, args)
   if not self.executable_zsh then
     return args.abort()
   end
-  -- 補完アイテムを args.callback({ items = items }) でコールバックする必要がある
-  args.callback({
-    items = self:collect(args.context.line)
-  })
+  self:collect(args.context.line, args.callback)
 end
 
-function Source.collect(self, input)
+function Source.collect(self, input, callback)
   local results = {}
   local job = Job:new {
     command = 'zsh',
@@ -59,10 +56,14 @@ function Source.collect(self, input)
         table.insert(results, {word = pieces[1]})
       end
     end,
+    on_exit = function(_, _, _)
+      callback({
+        items = results
+      })
+    end
   }
 
   job:start()
-  job:wait(1000)
   return results
 end
 
