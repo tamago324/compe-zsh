@@ -57,9 +57,11 @@ function Source.collect(self, input, callback)
       end
     end,
     on_exit = function(_, _, _)
-      callback({
-        items = results
-      })
+      vim.schedule(function()
+        callback({
+          items = results
+        })
+      end)
     end
   }
 
