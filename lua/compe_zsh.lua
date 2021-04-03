@@ -23,9 +23,10 @@ end
 
 
 function Source.determine(self, context)
-  return compe.helper.determine(context, {
-    keyword_pattern = '\\S\\+$',
-  })
+  -- return compe.helper.determine(context, {
+  --   keyword_pattern = '\\S\\+$',
+  -- })
+  return compe.helper.determine(context)
 end
 
 function Source.documentation(self, args)
@@ -39,7 +40,7 @@ function Source.complete(self, args)
   if not self.executable_zsh then
     return args.abort()
   end
-  self:collect(args.context.line, args.callback)
+  self:collect(args.context.before_line, args.callback)
 end
 
 function Source.collect(self, input, callback)
