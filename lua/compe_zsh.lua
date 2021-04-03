@@ -23,10 +23,10 @@ end
 
 
 function Source.determine(self, context)
-  -- return compe.helper.determine(context, {
-  --   keyword_pattern = '\\S\\+$',
-  -- })
-  return compe.helper.determine(context)
+  return compe.helper.determine(context, {
+    keyword_pattern = '\\S\\+$',
+  })
+  -- return compe.helper.determine(context)
 end
 
 function Source.documentation(self, args)
