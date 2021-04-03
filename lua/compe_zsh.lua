@@ -59,7 +59,8 @@ function Source.collect(self, input, callback)
     on_exit = function(_, _, _)
       vim.schedule(function()
         callback({
-          items = results
+          items = results,
+          incomplete = true,
         })
       end)
     end
