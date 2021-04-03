@@ -18,7 +18,7 @@ zmodload zsh/zpty
 Plug 'hrsh7th/nvim-compe'
 Plug 'tamago324/compe-zsh'
 Plug 'nvim-lua/plenary.nvim'
-
+Plug 'Shougo/deol.nvim'      " recommended to use together.
 
 lua << EOF
 require'compe'.setup {
